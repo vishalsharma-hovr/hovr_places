@@ -7,6 +7,7 @@ class PlacesChannels {
   static const autocomplete = 'autocomplete';
   static const placeDetails = 'placeDetails';
   static const endSession = 'endSession';
+  static const searchNearby = 'searchNearby';
 }
 
 /// Stable [PlatformException] / native `result.error` codes.
@@ -17,4 +18,8 @@ class PlacesErrorCodes {
   static const missingApiKey = 'MISSING_API_KEY';
   static const placeError = 'PLACE_ERROR';
   static const unimplemented = 'UNIMPLEMENTED';
+
+  /// Android only, with `cancelPrevious: true`: a newer autocomplete in the
+  /// same session (or endSession) replaced this one.
+  static const cancelled = 'CANCELLED';
 }

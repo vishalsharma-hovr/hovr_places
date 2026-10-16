@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("kotlin-android")
@@ -28,6 +30,13 @@ android {
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+        // Key from GOOGLE_PLACES_API_KEY env or git-ignored local.properties; never committed.
+        val localProps = Properties().apply {
+            rootProject.file("local.properties").takeIf { it.exists() }?.inputStream()?.use { load(it) }
+        }
+        manifestPlaceholders["placesApiKey"] = System.getenv("GOOGLE_PLACES_API_KEY")
+            ?: localProps.getProperty("GOOGLE_PLACES_API_KEY")
+            ?: "YOUR_API_KEY"
     }
 
     buildTypes {

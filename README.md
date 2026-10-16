@@ -19,7 +19,9 @@ final place = await HovrPlaces.instance.fetchDetails(
 await session.close();
 ```
 
-Configure countries / language / field debounce in Dart. Inject the Google key only in the host AndroidManifest / Info.plist — see [doc/INTEGRATION.md](doc/INTEGRATION.md).
+Also: sort by distance (`origin` + `sortByDistance`), location bias / restriction, type filters (`types: ['airport']`), region code, rich details (`fields: {PlaceDetailsField.addressComponents}`), nearby search and `nearestPlace` for "use my current location", match highlighting, and `onUsage` events. The full wire format is in [doc/CHANNEL_CONTRACT.md](doc/CHANNEL_CONTRACT.md); live device checks are in [doc/DEVICE_TESTING.md](doc/DEVICE_TESTING.md).
+
+Configure countries / language / region / field debounce in Dart. Inject the Google key only in the host AndroidManifest / Info.plist — see [doc/INTEGRATION.md](doc/INTEGRATION.md).
 
 ## Local development
 
@@ -44,8 +46,11 @@ dart analyze --fatal-warnings lib test example/lib tool
 dart run tool/check_channel_contract.dart
 fvm flutter test
 cd example/android && ./gradlew :hovr_places:testDebugUnitTest
+cd ../../ios && swift test
 ```
+
+CI (`.github/workflows/ci.yml`) runs all of the above plus an iOS example build.
 
 ## Publishing
 
-Bump `version`, tag (e.g. `v0.1.0`), publish to GitHub, pin consumer apps to the git `ref`.
+Bump `version`, tag (e.g. `v0.2.0`), publish to GitHub, pin consumer apps to the git `ref`.

@@ -1,6 +1,6 @@
 name: hovr_places
 description: Native Google Places autocomplete and place details for HOVR Flutter apps.
-version: 0.1.0
+version: 0.2.0
 homepage: https://github.com/vishalsharma-hovr/hovr_places
 repository: https://github.com/vishalsharma-hovr/hovr_places
 publish_to: none

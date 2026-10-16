@@ -1,0 +1,29 @@
+PODS:
+  - Flutter (1.0.0)
+  - GooglePlaces (10.15.0)
+  - hovr_places (0.2.0):
+    - Flutter
+    - GooglePlaces (>= 10.0)
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - hovr_places (from `.symlinks/plugins/hovr_places/ios`)
+
+SPEC REPOS:
+  trunk:
+    - GooglePlaces
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  hovr_places:
+    :path: ".symlinks/plugins/hovr_places/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 71a624a5bc0c04062bf19101d501e466baf2fb47
+  GooglePlaces: 0a7a6fd5d2ecf83582072f368f8e18523f817123
+  hovr_places: 4818532da15665717a2748eac317729fd2ed14fd
+
+PODFILE CHECKSUM: c1dce26aaf7681a2a52b0ff668e79814c687cbdb
+
+COCOAPODS: 1.16.2

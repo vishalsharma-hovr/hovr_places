@@ -35,10 +35,19 @@ class PlacesException implements Exception {
   static const missingApiKey = PlacesErrorCodes.missingApiKey;
   static const placeError = PlacesErrorCodes.placeError;
   static const unimplemented = PlacesErrorCodes.unimplemented;
+  static const cancelled = PlacesErrorCodes.cancelled;
 
   final String code;
   final String message;
   final Object? details;
+
+  /// Google's native status code for [placeError], when native sent one:
+  /// Android `ApiException.statusCode` (e.g. 9011 = key rejected by the
+  /// Places SDK), iOS `NSError.code`. Use it for logging and support, not UI.
+  int? get nativeCode => switch (details) {
+    {'nativeCode': final int code} => code,
+    _ => null,
+  };
 
   @override
   String toString() => 'PlacesException($code: $message)';

@@ -19,12 +19,18 @@ void main() {
   final sources = '$dart$kotlin$swift$doc';
 
   const channelName = 'com.hovr/places';
-  const methods = <String>['autocomplete', 'placeDetails', 'endSession'];
+  const methods = <String>[
+    'autocomplete',
+    'placeDetails',
+    'endSession',
+    'searchNearby',
+  ];
   const errors = <String>[
     'INVALID_ARGUMENT',
     'MISSING_API_KEY',
     'PLACE_ERROR',
     'UNIMPLEMENTED',
+    'CANCELLED',
   ];
 
   var failed = false;

@@ -3,9 +3,13 @@ library;
 
 export 'src/channels/places_channels.dart';
 export 'src/controller/hovr_places.dart';
+export 'src/models/place_address_component.dart';
 export 'src/models/place_details.dart';
+export 'src/models/place_details_field.dart';
 export 'src/models/place_prediction.dart';
 export 'src/models/places_config.dart';
 export 'src/models/places_exception.dart';
+export 'src/models/places_geo.dart';
 export 'src/models/places_session.dart';
+export 'src/models/places_usage_event.dart';
 export 'src/widgets/places_autocomplete_field.dart';

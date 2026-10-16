@@ -3,7 +3,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'hovr_places'
-  s.version          = '0.1.0'
+  s.version          = '0.2.0'
   s.summary          = 'Native Google Places autocomplete for HOVR Flutter apps.'
   s.description      = <<-DESC
 Method-channel Google Places autocomplete and place details. The API key stays on the host native side.
@@ -17,7 +17,7 @@ Method-channel Google Places autocomplete and place details. The API key stays o
     'hovr_places_privacy' => ['hovr_places/Sources/hovr_places/PrivacyInfo.xcprivacy']
   }
   s.dependency 'Flutter'
-  s.dependency 'GooglePlaces', '>= 9.0'
+  s.dependency 'GooglePlaces', '>= 10.0'
   s.platform = :ios, '16.0'
   s.static_framework = true
 
